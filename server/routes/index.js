@@ -10,6 +10,6 @@ router.put('/api/v1/post/update/:postId', postcontroller.updatePost);
 router.delete('/api/v1/post/delete/:postId', postcontroller.deletePost);
 
 router.post('/api/v1/post/comment/:postId', commentcontroller.createComment);
-
+router.get('/api/v1/comments', commentcontroller.Comments);
 
 module.exports = router;

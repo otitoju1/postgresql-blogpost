@@ -27,7 +27,12 @@ class CommentController {
 
     static async Comments(req, res) {
         try {
-            const info = await postservice.getAllPosts();
+            const info = await commentservice.getAllComments();
+            if(!info) {
+                return res.json({
+                    message: "No comment founds"
+                });
+            }
             return res.json({
                 info: info
             });
