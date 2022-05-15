@@ -11,6 +11,7 @@ h1 {
     margin-bottom: 10px;
     font-size: 32px;
     font-weight: 700;
+    color: white;
 }
 
 h3 {
@@ -62,11 +63,11 @@ form {
         padding: 1rem;
         background: none;
         z-index: 1;
-        color: #171c25;
+        color: #fff;
     }
 
     input:focus {
-        border-color: #fa578e;
+        border-color: #000;
     }
 
     .label-focused {
