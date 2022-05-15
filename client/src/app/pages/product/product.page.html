@@ -14,7 +14,7 @@
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons> -->
-    <ion-title>Shopping Cart</ion-title>
+    <ion-title>Blog Post</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,38 +22,61 @@
   <div class="productscreen">
         <div class="productscreen__left">
           <div class="left__image">
-            <img src={{product.imageUrl}} alt="" />
+            <img src='{{post.photo}}' alt="" />
           </div>
           <div class="left__info">
-            <p class="left__name">{{product.name}}</p>
-            <p>Price: ${{product.price}}</p>
-            <p>Description: {{product.description}}</p>
+            <ion-card>
+              <ion-card-content>
+                    <p class="left__name">{{post.title}}</p>
+                    <p class="content-body">
+                     <!-- {{comment.timeStamp | date : 'H:mm a'}} -->
+
+                     <!-- {{post.content.charAt(0).toUpperCase() + post.content.slice(1)}} -->
+
+                     {{post.content}}
+                    </p>
+              </ion-card-content>
+             
+            </ion-card>
+            <!-- <p class="left__name">{{post.title}}</p>
+            <p>Description: {{post.content}}</p> -->
           </div>
         </div>
         <div class="productscreen__right">
-          <div class="right__info">
-            <p>
-              Price:
-              <span>${{product.price}}</span>
-            </p>
-            <p>
-              Status:
-              <span>
-                In Stock and Out of Stock
-              </span>
-            </p>
-            <p>
-              Qty
-              <select>
-                
-              </select>
-            </p>
-            <p>
-              <button (click)="addToCart()" type="button">
-                Add To Cart
-              </button>
-            </p>
+          <!-- <div class="right__info"> -->
+              
+          <!-- </div> -->
+
+          <div class="comment-box">
+            <p class="comment-title">Comments <ion-icon name="chatbubble-ellipses-outline"></ion-icon></p>
+            <ion-card *ngFor="let c of comments">
+              <ion-card-content>
+                <strong>{{c.name}}</strong>
+                    <!-- <strong>{{c.name.charAt(0).toUpperCase() + c.name.slice(1)}}</strong> -->
+                    <p class="comment-text">
+                     <!-- {{comment.timeStamp | date : 'H:mm a'}} -->
+
+                     <!-- {{c.content.charAt(0).toUpperCase() + c.content.slice(1)}} -->
+                     {{c.content}}
+                    </p>
+                    <p class="date">
+                      {{c.createdAt | date : 'H:mm a'}}
+                    </p>
+              </ion-card-content>
+             
+            </ion-card>
+
+            
           </div>
         </div>
   </div>
+
+  
 </ion-content>
+
+<ion-footer class="padding">
+  
+  <ion-input placeholder="Your name..." type="text" name="name" [(ngModel)]="commentData.name"></ion-input>
+  <ion-textarea  type="text" [(ngModel)]="commentData.content" placeholder="Comment here .... "></ion-textarea>
+  <ion-button shape="round" (click)="handleComment()">Send</ion-button>
+</ion-footer>

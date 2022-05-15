@@ -17,3 +17,23 @@ sequelize model:create --name TodoItem --attributes content:string,complete:bool
 
 // run migration
 sequelize db:migrate
+
+{
+  "development": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "blog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "blog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "postgres://siswljax:ta3Okv0umGAP2xhvzlIyYex1Wt8jCmyV@lallah.db.elephantsql.com/siswljax"
+  }
+}

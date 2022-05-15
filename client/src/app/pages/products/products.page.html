@@ -1,12 +1,11 @@
 <ion-header collapse="fade" [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-         
+      <ion-button (click)="signin()">
+        <ion-icon name="log-in-outline"></ion-icon>
       </ion-button>
       <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
+        <ion-icon name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
     <!-- <ion-buttons slot="primary">
@@ -14,17 +13,17 @@
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons> -->
-    <ion-title>Shopping Cart</ion-title>
+    <ion-title>Blog</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="homescreen">
-    <h2 class="homescreen__title">Latest Products</h2>
-    <ion-searchbar showCancelButton="always"></ion-searchbar>
+    <h2 class="homescreen__title">Latest Posts</h2>
+    <ion-searchbar showCancelButton="always" [(ngModel)]="searchString"></ion-searchbar>
     <div class="homescreen__products">
-      <div class="product" *ngFor="let post of posts">
-        <img src={{post.photo}} alt="" />
+      <div class="product" *ngFor="let post of posts | filter:searchString">
+        <img src='{{post.photo}}' alt="blog-image" />
   
         <div class="product__info">
           <p class="info__name">{{post.title}}</p>
@@ -33,7 +32,7 @@
   
           <!-- <p class="info__price">${{product.price}}</p> -->
   
-          <a [routerLink]="['/product', post.id]" class="info__button">
+          <a [routerLink]="['/post', post.id]" class="info__button">
             View
           </a>
         </div>

@@ -1,3 +1,9 @@
+// ion-footer{
+  
+//   margin-bottom: 10%; 
+//   padding-top: .5em;
+//   padding-bottom: .5em;
+// }
 .productscreen {
     max-width: 1300px;
     margin: 1rem auto;
@@ -17,7 +23,6 @@
   .left__info {
     margin: 1rem;
     flex: 0.4;
-    background: #fff;
     height: fit-content;
     font-size: 0.9rem;
     color: #000
@@ -26,6 +31,12 @@
   .left__name {
     font-weight: bold;
     font-size: 1.3rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .content-body {
+    font-size: 1.0rem;
   }
   
   .left__info > p,
@@ -71,6 +82,40 @@
   
   .right__info select {
     padding: 10px 16px;
+  }
+
+  ion-textarea {
+    border-bottom: 1px solid #000000;
+    margin: 0px 5px;
+    color: #fff;
+}
+
+  ion-input {
+    border-bottom: 1px solid #000000;
+    margin: 0px 5px;
+    color: #fff;
+  }
+  p {
+      text-align: justify;
+  }
+  .comment-box {
+      //overflow: scroll;
+      height: auto;
+  }
+
+  .comment-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  .comment-text {
+    font-size: 0.8rem;
+  }
+
+  .date {
+    margin-top: 5px;
+    font-size: 0.6rem;
   }
   
   @media (max-width: 960px) {

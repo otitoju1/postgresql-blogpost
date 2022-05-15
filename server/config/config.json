@@ -1,3 +1,4 @@
+
 {
   "development": {
     "username": "postgres",
@@ -14,10 +15,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "1234",
-    "database": "blog",
-    "host": "127.0.0.1",
+    "username": "siswljax",
+    "password": "ta3Okv0umGAP2xhvzlIyYex1Wt8jCmyV",
+    "database": "siswljax",
+    "host": "lallah.db.elephantsql.com",
     "dialect": "postgres"
   }
 }
