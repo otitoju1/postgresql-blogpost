@@ -1371,7 +1371,7 @@ body {
   margin-top: constant(safe-area-inset-top);
   margin-top: env(safe-area-inset-top);
 }
-content {
+ion-content {
   background-color: var(--bg-color);
 }
 @font-face {
