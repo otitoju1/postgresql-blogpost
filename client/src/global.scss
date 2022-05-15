@@ -40,7 +40,6 @@
 body {
     margin-top: constant(safe-area-inset-top);
     margin-top: env(safe-area-inset-top);
-    background-color: var(--bg-color);
 }
 
 content {
