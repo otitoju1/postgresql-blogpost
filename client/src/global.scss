@@ -40,10 +40,16 @@
 body {
     margin-top: constant(safe-area-inset-top);
     margin-top: env(safe-area-inset-top);
+    background-color: #1b1b20;
+    color: #fff;
+}
+
+.bg_color {
+    --background: var(--bg-color);
 }
 
 ion-content {
-    background-color: var(--bg-color);
+    background-color: #1b1b20;
 }
 
 @font-face {
