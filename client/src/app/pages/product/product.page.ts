@@ -1,5 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { BlogService } from 'src/app/services/blog.service';
 
@@ -21,7 +21,9 @@ export class ProductPage implements OnInit {
   constructor(
     private blogService: BlogService, 
     private activatedRoute: ActivatedRoute, 
-    private toastController: ToastController) {
+    private toastController: ToastController,
+    private route: Router,
+    ) {
 
    }
 
@@ -77,5 +79,7 @@ export class ProductPage implements OnInit {
     await toast.present();
   }
 
-
+  signin() {
+    this.route.navigate(['/login']);
+  }
 }
