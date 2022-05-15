@@ -23,6 +23,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use('/', routes);
 
+app.use(express.static("./client/www"));
+
+app.get("/*", (req, res) => {
+    res.sendFile('index.html', {root:'client/www'});
+});
+
 // Setup a default catch-all route that sends back a welcome message in JSON format.
 app.get('/', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning.',
