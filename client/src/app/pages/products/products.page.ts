@@ -15,6 +15,7 @@ export class ProductsPage implements OnInit {
   ngOnInit() {
     this.blogService.get('/api/v1/posts').subscribe((response:any) => {
       this.posts = response.info;
+      console.log(response);
     });
   }
 
